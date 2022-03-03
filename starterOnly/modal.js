@@ -7,6 +7,21 @@ function editNav() {
   }
 }
 
+// Get the container element
+var navContainer = document.getElementById("mainNavbar");
+
+// Get all buttons with class="btn" inside the container
+var btns = navContainer.getElementsByClassName("mainNavbar__item");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
 // DOM Elements
 const modalbg = document.querySelector(".bkground");
 const modalConfirmation = document.querySelector(".bkground-confirmation");
