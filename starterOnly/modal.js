@@ -1,10 +1,10 @@
 // responsive navbar when mobile size
 function editNav() {
   var x = document.getElementById("myTopNav");
-  if (x.className === "TopNav") {
+  if (x.className === "topNav") {
     x.className += " responsive";
   } else {
-    x.className = "TopNav";
+    x.className = "topNav";
   }
 }
 
