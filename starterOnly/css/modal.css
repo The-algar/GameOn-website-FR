@@ -709,18 +709,25 @@ input[data-error]::after {
      object-fit: cover;
 }
 
-.copyrights {
+.copyright {
   color: #fe142f;
   padding: 0;
   font-size: 1rem;
-  padding: 25px 4%;
+  padding: 5px 4% 25px 4%;
   font-weight: bolder;
 }
-@media screen and (max-width: 768px) {
-  .copyrights {
-    font-size: 0.8rem;
-    padding: 5px 4%;
+@media screen and (min-width: 768px) {
+  .copyright {
+    font-size: 1rem;
     /* margin-top: 28px; */
+  }
+}
+@media screen and (max-width: 768px) {
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
   }
 }
 /* this is the end */
