@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
+    <meta application="octet-stream" charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +21,11 @@
       <img alt="logo" src="assets/img/Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
+      <a href="#" class="main-navbar__item active"><span>Accueil</span></a>
+      <a href="#" class="main-navbar__item"><span>Détails de l'évènement</span></a>
+      <a href="#" class="main-navbar__item"><span>À propos</span></a>
+      <a href="#" class="main-navbar__item"><span>Contact</span></a>
+      <a href="#" class="main-navbar__item"><span>Évènements passés</span></a>
 
       <a href="javascript:void(0);" title="burger" class="icon" onclick="editNav()">
         <i class="fa fa-bars"></i>
@@ -51,12 +50,10 @@
             aux réservations... Places limitées !
           </p>
         </header>
-
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
-        </div>
-        <button class="btn-signup modal-btn">
+        <button class="btn btn-signup modal-btn">
+          je m'inscris
+        </button>
+        <button class="btn btn-signup2 modal-btn">
           je m'inscris
         </button>
       </div>
@@ -122,7 +119,7 @@
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99"><br>
                 <span id="quantity-error"></span>
               </div>
-              <p class="text-label">* A quel tournoi souhaitez-vous participer cette année ?</p>
+              <p class="text-label">* A quel tournoi souhaitez-vous participé cette année ?</p>
               <div
                 class="formData">
                 <input
@@ -227,10 +224,12 @@
                 value="C'est parti"
               />
             </form>
-            <br>
             <h6><label class="checkbox-label">* les champs marqués d'un astérisque sont obligatoires</label></h6>
           </div>
         </div>
+        <button class="btn btn-signup2 modal-btn">
+          je m'inscris
+        </button>
       </div>
       <!-- ***********Confirmation************-->
       <div class="bkground-confirmation">
@@ -239,7 +238,7 @@
           <div class="modal-body">
             <div class="container">
               <p>Merci de votre inscription à</p>
-              <img class="thankU-logo" alt="logo" src="Logo.png" /> <!-- width="auto" height="auto"--></p>
+              <img class="thankU-logo" alt="logo" src="assets/img/Logo.png" /> <!-- width="auto" height="auto"--></p>
             </div>
           </div>
           <button class="btn-close close-confirmation">
@@ -249,9 +248,9 @@
       </div>
     </main>
     <footer>
-      <p class="copyrights">
+      <div class="copyrights">
         Copyright 2014 - 2022, GameOn Inc.
-      </p>
+      </div>
     </footer>
     <script src="modal.js"></script>
   </body>
