@@ -1,3 +1,4 @@
+// responsive navbar when mobile size
 function editNav() {
   var x = document.getElementById("myTopNav");
   if (x.className === "TopNav") {
@@ -8,10 +9,10 @@ function editNav() {
 }
 
 // Get the container element
-var navContainer = document.getElementById("mainNavbar");
+var navContainer = document.getElementById("mainNavBar");
 
 // Get all buttons with class="btn" inside the container
-var btns = navContainer.getElementsByClassName("mainNavbar__item");
+var btns = navContainer.getElementsByClassName("mainNavBar__item");
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
