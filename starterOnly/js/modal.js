@@ -45,7 +45,7 @@ const inputCondition = document.getElementById('checkbox1');
 // regex 
 const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const nameRegex = /^[A-Za-z_-]{2,30}$/;
-const birthRegex = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+const birthRegex = /^(19|20)\d\d+[-/.]+[0-9]+[-/.][0-9]/ //^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const tournoiRegex = /^[+]?\d+([.]\d+)?$/;
 
 // launch modal event
