@@ -7,7 +7,7 @@ function editNav() {
     x.className = "topNav";
   }
 }
-
+// Update NavBar
 // Get the container element
 var navContainer = document.getElementById("mainNavBar");
 
