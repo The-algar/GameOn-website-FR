@@ -7,7 +7,7 @@ function editNav() {
     x.className = "topNav";
   }
 }
-// Update NavBar
+
 // Get the container element
 var navContainer = document.getElementById("mainNavBar");
 
@@ -32,10 +32,10 @@ const btnClose = document.querySelectorAll('.close');
 const closeConfirmation = document.querySelector('.close-confirmation');
 
 // Forms modal DOM Elements
-const inputFirstName = document.getElementById('first');
-const inputLastName = document.getElementById('last');
+const inputFirstName = document.getElementById('firstName');
+const inputLastName = document.getElementById('lastName');
 const inputEmail = document.getElementById('email');
-const inputDate = document.getElementById('birthdate');
+const inputDate = document.getElementById('birthDate');
 const inputQuantity = document.getElementById('quantity');
 
 let inputLocation = document.reserve.location;
