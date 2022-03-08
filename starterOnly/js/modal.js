@@ -9,10 +9,10 @@ function editNav() {
 }
 
 // Get the container element
-var navContainer = document.getElementById("mainNavBar");
+var navContainer = document.getElementById("menu");
 
 // Get all buttons with class="btn" inside the container
-var btns = navContainer.getElementsByClassName("mainNavBar__item");
+var btns = navContainer.getElementsByClassName("menu__item");
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
