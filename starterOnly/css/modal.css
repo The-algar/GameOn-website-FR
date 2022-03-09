@@ -151,7 +151,8 @@ img {
     align-items: center;
     overflow: hidden;
     background-color: rgb(255, 255, 255);
-    border-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     z-index: 20;
   }
   .menu > li {
