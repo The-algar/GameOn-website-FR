@@ -87,19 +87,6 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu > li {
-    margin: 0 2rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .menu-button-container {
     display: none;
     height: 50px;
@@ -163,36 +150,43 @@ img {
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
   }
-  #menu-toggle ~ .menu li {
+  .menu > li {
+    margin: 0 2rem;
+  }
+  #menu-toggle ~ .menu .menu__item {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #menu-toggle:checked ~ .menu li {
-    border: 1px solid rgba(255, 255, 255, 1);
+  #menu-toggle:checked ~ .menu .menu__item {
+    /* border: 1px solid rgba(255, 255, 255, 1); */
     height: 2.5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 100;
   }
-  .menu > li {
+  /**** Burger menu layout ***/
+  .menu > .menu__item {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0.5em 0;
     width: 100%;
-    color: white;
-    background-color: #222;
+    /* color: black;
+    background-color: red; */
+    /* background-color: rgb(255, 255, 255, 0.75); */
   }
-  .menu > li:not(:last-child) {
+  .menu > .menu__item:not(:last-child) {
     border-bottom: 1px solid #444;
   }
 }
 /**** end new burger *****/
 
-.menu__item {
+  .menu__item {
   display: inline-block;
   text-align: center;
   padding: 12px 12px;
@@ -201,48 +195,17 @@ img {
   font-family: Roboto, sans-serif;
   color: #000000;
   text-decoration: none;
-}
-
-.menu__item:hover {
+  }
+  .menu__item:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-}
-.menu__item.active {
+  }
+  .menu__item.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-}
-/* .topNav .icon {
-  position: relative;
-  align-self: center;
-  display: none;
-  text-decoration: none;
-}
-@media screen and (max-width: 768px) {
-  .topNav .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-} */
-
-/*.topNav .icon .fa-bars {
-  color: red;
-  font-size: 30px;
-  width: 100%;
-  height: 100%;
-  align-self: center;
-}
-
-@media screen and (max-width: 768px) {
-  .topNav a {display: none;}
-  .topNav a.icon {
-    float: right;
-    display: block;
-  }
-} */
-
 
 main {
   font-size: 130%;

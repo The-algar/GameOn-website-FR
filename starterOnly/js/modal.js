@@ -1,13 +1,4 @@
-// responsive navbar when mobile size
-//function menuToggle() {
-  //var x = document.getElementById("myTopNav");
-  //if (x.className === "topNav") {
-    //x.className += " responsive";
-  //} else {
-    //x.className = "topNav";
-  //}
-//}
-
+//**** Select a menu element *****//
 // Get the container element
 var navContainer = document.getElementById("menu");
 
