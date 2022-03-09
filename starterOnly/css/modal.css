@@ -56,14 +56,6 @@ img {
   margin: 3.5%;
 }
 
-.menu {
-  list-style-type: none;
-}
-
-#menu-toggle {
-  display: none;
-}
-
 @media screen and (max-width: 1200px) {
   .topNav {
     position: relative;
@@ -79,11 +71,19 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: red;
+    color: #000;
     height: 50px;
     padding: 1em;
     margin: 4% 3.5%;
   }
+}
+
+.menu {
+  list-style-type: none;
+}
+
+#menu-toggle {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
