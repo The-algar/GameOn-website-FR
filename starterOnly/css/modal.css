@@ -33,6 +33,22 @@ img {
   padding-right: 1rem;
 }
 
+
+/***** LOGO *****/ 
+.topNav__logo {
+  height: 50px;
+}
+.topNav__logo img {
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .topNav__logo {
+    height: 30px;
+    align-self: flex-start;
+  }
+}
+
 .topNav {
   display: flex;
   justify-content: space-between;
@@ -132,20 +148,6 @@ img {
 #menu-toggle:checked + .menu-button-container .menu-button::after {
   margin-top: 0px;
   transform: rotate(-45deg);
-}
-
-.topNav__logo {
-  height: 50px;
-}
-.topNav__logo img {
-  height: 100%;
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
-  .topNav__logo {
-    height: 30px;
-    align-self: flex-start;
-  }
 }
 
 @media screen and (max-width: 768px) {
