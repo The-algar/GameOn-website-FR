@@ -52,7 +52,6 @@ img {
 .topNav {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   margin: 3.5%;
 }
 
@@ -71,10 +70,7 @@ img {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: #000;
-    height: 50px;
-    padding: 1em;
-    margin: 4% 3.5%;
+    height: 100%;
   }
 }
 
@@ -143,13 +139,19 @@ img {
   }
   .menu {
     position: absolute;
-    top: 0;
+    top: 25px;
     margin-top: 50px;
     left: 0;
     flex-direction: column;
+    height:-webkit-max-content;
+    height:-moz-max-content;
+    height:max-content;
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    z-index: 2000;
   }
   .menu > li {
     margin: 0 2rem;
@@ -193,6 +195,7 @@ img {
   font-family: Roboto, sans-serif;
   color: #000000;
   text-decoration: none;
+  background-color: rgb(255, 255, 255, 0.5);
   }
   .menu__item:hover {
   background-color: #ff0000;
