@@ -39,6 +39,15 @@ img {
   overflow: hidden;
   margin: 3.5%;
 }
+
+.menu {
+  list-style-type: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .topNav {
     position: relative;
@@ -50,26 +59,81 @@ img {
 
 @media screen and (max-width: 768px) {
   .topNav {
+    display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    justify-content: space-between;
+    color: red;
+    height: 50px;
+    padding: 1em;
     margin: 4% 3.5%;
   }
 }
-.topNav.responsive {
-  position: relative;
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu > li {
+    margin: 0 2rem;
+  }
 }
-.topNav.responsive .icon {
-  position: absolute;
-  right: 0;
-  top: 0;
+
+@media screen and (max-width: 768px) {
+  .menu-button-container {
+    display: none;
+    height: 50px;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.topNav.responsive .menu__item {
-  float: none;
-  display: block;
-  text-align: left;
-  margin-top: 0;
-  margin-right: 30px;
+
+/***** CREATION BURGER *****/
+@media screen and (max-width: 768px) {
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: red;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
 }
+/***** ANIMATION BURGER *****/
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-45deg);
+}
+
 .topNav__logo {
   height: 50px;
 }
@@ -83,18 +147,50 @@ img {
     align-self: flex-start;
   }
 }
-.topNav .menu {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-}
+
 @media screen and (max-width: 768px) {
-  .topNav .menu {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
     flex-direction: column;
+    width: 100%;
+    justify-content: center;
     align-items: center;
   }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid rgba(255, 255, 255, 1);
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
 }
-.topNav .menu__item {
+/**** end new burger *****/
+
+.menu__item {
   display: inline-block;
   text-align: center;
   padding: 12px 12px;
@@ -104,22 +200,18 @@ img {
   color: #000000;
   text-decoration: none;
 }
-@media screen and (max-width: 768px) {
-  .topNav .menu__item {
-    display: none;
-  }
-}
-.topNav .menu__item:hover {
+
+.menu__item:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-.topNav .menu__item.active {
+.menu__item.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-.topNav .icon {
+/* .topNav .icon {
   position: relative;
   align-self: center;
   display: none;
@@ -131,9 +223,9 @@ img {
     justify-content: center;
     align-items: center;
   }
-}
+} */
 
-.topNav .icon .fa-bars {
+/*.topNav .icon .fa-bars {
   color: red;
   font-size: 30px;
   width: 100%;
@@ -147,7 +239,7 @@ img {
     float: right;
     display: block;
   }
-}
+} */
 
 
 main {
