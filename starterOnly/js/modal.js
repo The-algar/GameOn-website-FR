@@ -123,8 +123,8 @@ function launchConfirmationModal () {
 
 function validate (event){
   event.preventDefault();
-  const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'prenom-error', '* Champ obligatoire avec un minimum de 2 caractères');
-  const isLastNameValid = checkEntry(inputLastName, nameRegex, 'nom-error', '* Champ obligatoire avec un minimum de 2 caractères');
+  const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', '* Champ obligatoire avec un minimum de 2 caractères');
+  const isLastNameValid = checkEntry(inputLastName, nameRegex, 'lastName-error', '* Champ obligatoire avec un minimum de 2 caractères');
   const isEmailValid = checkEntry(inputEmail, emailRegex, 'email-error', ' * Champ obligatoire avec une adresse électronique valide.');
   const isBirthdayValid = checkEntry(inputDate, birthRegex, 'date-error', '* Champ obligatoire avec votre date de naissance.');
   const isNumberTournamentValid = checkEntry(inputQuantity, tournoiRegex, 'quantity-error',  '* Champ obligatoire, vous devez indiquer un nombre entre 0 et 99.');

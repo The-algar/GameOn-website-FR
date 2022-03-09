@@ -69,8 +69,7 @@
               method="get"
               onsubmit="validate(event);"
             >
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="firstName">* Prénom</label><br>
                 <input
                   class="text-control"
@@ -79,7 +78,7 @@
                   name="firstName"
                   minlength="2"
                 /><br>
-                <span id="prenom-error"></span>
+                <span id="firstName-error"></span>
               </div>
               <div
                 class="formData">
@@ -89,8 +88,9 @@
                   type="text"
                   id="lastName"
                   name="lastName"
+                  minlength="2"
                 /><br>
-                <span id="nom-error"></span>
+                <span id="lastName-error"></span>
               </div>
               <div
                 class="formData">
@@ -117,7 +117,13 @@
               <div
                 class="formData">
                 <label for="quantity">* À combien de tournois GameOn avez-vous déjà participé ? </label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99"><br>
+                <input 
+                type="number" 
+                class="text-control" 
+                id="quantity" 
+                name="quantity" 
+                min="0" max="99"
+                /><br>
                 <span id="quantity-error"></span>
               </div>
               <p class="text-label">* A quel tournoi souhaitez-vous participé cette année ?</p>
