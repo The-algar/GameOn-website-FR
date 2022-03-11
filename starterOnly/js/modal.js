@@ -96,6 +96,27 @@ function checkboxLocation(radio, errorId, errorMsg){
      return valid
 }
 
+let currentDate = new Date();
+
+// birthRegex to date validation condition
+function checkBirthDateEntry(input, errorId, errorMsg) {
+  let errorTag = document.getElementById(errorId);
+  let value = input.value;  
+  if (birthRegex.test(value) && Date.parse(value) > currentDate) {
+    errorTag.textContent = errorMsg;
+    input.style.borderColor = "#FF4E60";
+    input.style.borderWidth = "2px";
+    errorTag.style.color = "#FF4E60";
+    errorTag.style.fontSize = "12px";
+    return false;
+  } else {
+    errorTag.textContent = "";
+    input.style.borderColor = "green";
+    input.style.borderWidth = "2px";
+    return true;
+  }
+
+}
 function checkboxCondition(checkbox, errorId, errorMsg){
   let errorTag = document.getElementById(errorId)
 
