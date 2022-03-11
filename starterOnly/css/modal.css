@@ -499,7 +499,7 @@ input[data-error]::after {
     margin-top: 25px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .btn-signup2 {
     display: none;
   }
