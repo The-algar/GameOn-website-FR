@@ -98,7 +98,13 @@ function checkboxLocation(radio, errorId, errorMsg){
 
 let currentDate = new Date();
 
-// birthRegex to date validation condition
+/** Check Birthdate Entry superior @current Date
+ * 
+ * @param {*} input - Regex Date input to check birthday validity
+ * @param {*} errorId 
+ * @param {*} errorMsg 
+ * @returns 
+ */
 function checkBirthDateEntry(input, errorId, errorMsg) {
   let errorTag = document.getElementById(errorId);
   let value = input.value;  
@@ -117,6 +123,8 @@ function checkBirthDateEntry(input, errorId, errorMsg) {
   }
 
 }
+
+
 function checkboxCondition(checkbox, errorId, errorMsg){
   let errorTag = document.getElementById(errorId)
 
