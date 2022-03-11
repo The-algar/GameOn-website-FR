@@ -80,16 +80,16 @@ function checkEntry(input, regex, errorId, errorMsg) {
   }
 
 }
+/** birthRegex to date validation condition - if birthdate is > to current date return error
+ * 
+ */
 
-// tranform Regex string to date format
-const RegExpDateDayMonthYear = date =>
-  date.replace(birthRegex, "$<day>/$<month>/$<year>")
 let currentDate = new Date();
 
-// birthRegex to date validation condition
-function checkBirthDateEntry(input, RegExpDateDayMonthYear, errorId, errorMsg) {
+function checkBirthDateEntry(input,  errorId, errorMsg) {
   let errorTag = document.getElementById(errorId);  
-    if(RegExpDateDayMonthYear(date.input) > currentDate) {
+  let value = input.value; 
+  if (birthRegex.test(value) && Date.parse(value) > currentDate) {
     errorTag.textContent = errorMsg; 
     input.style.borderColor = "#FF4E60";
     input.style.borderWidth = "2px";
