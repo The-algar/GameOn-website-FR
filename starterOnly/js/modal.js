@@ -155,7 +155,7 @@ function validate (event){
   const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', '* Champ obligatoire avec un minimum de 2 caractères');
   const isLastNameValid = checkEntry(inputLastName, nameRegex, 'lastName-error', '* Champ obligatoire avec un minimum de 2 caractères');
   const isEmailValid = checkEntry(inputEmail, emailRegex, 'email-error', ' * Champ obligatoire avec une adresse électronique valide.');
-  const isBirthdayValid = checkEntry(inputDate, birthRegex, 'date-error', '* Champ obligatoire avec votre date de naissance.');
+  const isBirthdayValid = checkBirthDateEntry(inputDate, 'date-error', '* Champ obligatoire avec votre date de naissance.');
   const isNumberTournamentValid = checkEntry(inputQuantity, tournoiRegex, 'quantity-error',  '* Champ obligatoire, vous devez indiquer un nombre entre 0 et 99.');
   const isLocationValid = checkboxLocation(inputLocation,'location-error', '* Champ obligatoire, vous devez selectionner une ville pour le tournoi.');
   const isConditionValid = checkboxCondition(inputCondition,'condition-error', '* Champ obligatoire, Vous devez accepter les termes et conditions.');
