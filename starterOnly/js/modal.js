@@ -159,7 +159,7 @@ function validate (event){
   const isBirthdayValid = checkBirthDateEntry(inputDate, 'date-error', 'Champ obligatoire avec votre date de naissance.');
   const isNumberTournamentValid = checkEntry(inputQuantity, tournoiRegex, 'quantity-error',  'Champ obligatoire, vous devez indiquer un nombre entre 0 et 99.');
   const isLocationValid = checkboxLocation(inputLocation,'location-error', 'Champ obligatoire, vous devez selectionner une ville pour le tournoi.');
-  const isConditionValid = checkboxCondition(inputCondition,'condition-error', 'Champ obligatoire, Vous devez accepter les termes et conditions.');
+  const isConditionValid = checkboxCondition(inputCondition,'condition-error', 'Champ obligatoire, Vous devez accepter les conditions d\'utilisation.');
 
   if( isFirstNameValid && 
       isLastNameValid && 
