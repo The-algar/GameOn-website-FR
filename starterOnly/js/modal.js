@@ -2,10 +2,10 @@
 // Get the container element
 var navContainer = document.getElementById("menu");
 
-// Get all buttons with class="btn" inside the container
+// Get all buttons with class="menu__item" inside the container
 var btns = navContainer.getElementsByClassName("menu__item");
 
-// Loop through the buttons and add the active class to the current/clicked button
+// Loop through the buttons and add /replace the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
@@ -41,6 +41,7 @@ const tournoiRegex = /^[+]?\d+([.]\d+)?$/;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal,))
+
 // Close modal event
 btnClose.forEach((btnClose) => btnClose.addEventListener("click", closeModal))
 
@@ -152,13 +153,13 @@ function launchConfirmationModal () {
 
 function validate (event){
   event.preventDefault();
-  const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', '* Champ obligatoire avec un minimum de 2 caractères');
-  const isLastNameValid = checkEntry(inputLastName, nameRegex, 'lastName-error', '* Champ obligatoire avec un minimum de 2 caractères');
-  const isEmailValid = checkEntry(inputEmail, emailRegex, 'email-error', ' * Champ obligatoire avec une adresse électronique valide.');
-  const isBirthdayValid = checkBirthDateEntry(inputDate, 'date-error', '* Champ obligatoire avec votre date de naissance.');
-  const isNumberTournamentValid = checkEntry(inputQuantity, tournoiRegex, 'quantity-error',  '* Champ obligatoire, vous devez indiquer un nombre entre 0 et 99.');
-  const isLocationValid = checkboxLocation(inputLocation,'location-error', '* Champ obligatoire, vous devez selectionner une ville pour le tournoi.');
-  const isConditionValid = checkboxCondition(inputCondition,'condition-error', '* Champ obligatoire, Vous devez accepter les termes et conditions.');
+  const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', 'Champ obligatoire avec un minimum de 2 caractères');
+  const isLastNameValid = checkEntry(inputLastName, nameRegex, 'lastName-error', 'Champ obligatoire avec un minimum de 2 caractères');
+  const isEmailValid = checkEntry(inputEmail, emailRegex, 'email-error', ' Champ obligatoire avec une adresse électronique valide.');
+  const isBirthdayValid = checkBirthDateEntry(inputDate, 'date-error', 'Champ obligatoire avec votre date de naissance.');
+  const isNumberTournamentValid = checkEntry(inputQuantity, tournoiRegex, 'quantity-error',  'Champ obligatoire, vous devez indiquer un nombre entre 0 et 99.');
+  const isLocationValid = checkboxLocation(inputLocation,'location-error', 'Champ obligatoire, vous devez selectionner une ville pour le tournoi.');
+  const isConditionValid = checkboxCondition(inputCondition,'condition-error', 'Champ obligatoire, Vous devez accepter les termes et conditions.');
 
   if( isFirstNameValid && 
       isLastNameValid && 
