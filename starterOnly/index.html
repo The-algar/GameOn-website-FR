@@ -69,6 +69,7 @@
               method="get"
               onsubmit="validate(event);"
             >
+            <!--  2nd Issue : implement label and inputs expected for the modal form -->
               <div class="formData">
                 <label for="firstName">* Prénom</label><br>
                 <input
@@ -78,6 +79,7 @@
                   name="firstName"
                   minlength="2"
                 /><br>
+              <!--  3rd Issue : implement span for error reporting -->
                 <span id="firstName-error"></span>
               </div>
               <div
@@ -201,11 +203,12 @@
             
               <div
                 class="formData">
+                <!--uncheck for RGPD-->
                 <input
                   class="checkbox-input input-condition"
                   type="checkbox"
                   id="checkbox1"
-                  checked
+                  checked 
                 />
                 <label class="checkbox2-label" for="checkbox1" required="required">
                   <span class="checkbox-icon"></span>

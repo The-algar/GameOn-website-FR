@@ -1,9 +1,9 @@
-//**** Select a menu element *****//
+//**** Select a menu element and unselect previous selection *****//
 // Get the container element
-var navContainer = document.getElementById("menu");
+let navContainer = document.getElementById("menu");
 
 // Get all buttons with class="menu__item" inside the container
-var btns = navContainer.getElementsByClassName("menu__item");
+let btns = navContainer.getElementsByClassName("menu__item");
 
 // Loop through the buttons and add /replace the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
@@ -19,6 +19,7 @@ const modalbg = document.querySelector(".bkground");
 const modalConfirmation = document.querySelector(".bkground-confirmation");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+// Intégration des varibles de fermeture modal et confirmation
 const btnClose = document.querySelectorAll('.close');
 const closeConfirmation = document.querySelector('.close-confirmation');
 
@@ -57,6 +58,13 @@ function closeModal(){
   modalConfirmation.style.display = "none";
 }
 
+/** Check Entries
+ * 
+ * @param {*} input - check validity of user input
+ * @param {*} errorId - id de la clef d'erreur
+ * @param {*} errorMsg - message affiché à l'utilisateur
+ * @returns 
+ */
 function checkEntry(input, regex, errorId, errorMsg) {
   let errorTag = document.getElementById(errorId);
   // trim() permet d'éviter à l'utilisateur d'ajouter des espaces dans le input qui est considéré comme un charactère
@@ -68,6 +76,35 @@ function checkEntry(input, regex, errorId, errorMsg) {
     return true;
   } else {
     errorTag.textContent = errorMsg; 
+    input.style.borderColor = "#FF4E60";
+    input.style.borderWidth = "2px";
+    errorTag.style.color = "#FF4E60";
+    errorTag.style.fontSize = "12px";
+    return false;
+  }
+
+}
+
+// variable qui défini la date du jour
+let currentDate = new Date();
+
+/** Check Birthdate Entry superior to current Date
+ * 
+ * @param {*} input - Date input to check birthday validity
+ * @param {*} errorId - id de la clef d'erreur
+ * @param {*} errorMsg - message affiché à l'utilisateur
+ * @returns 
+ */
+function checkBirthDateEntry(input, errorId, errorMsg) {
+  let errorTag = document.getElementById(errorId);
+  let value = input.value;  
+  if (birthRegex.test(value) && Date.parse(value) < currentDate) {
+    errorTag.textContent = "";
+    input.style.borderColor = "green";
+    input.style.borderWidth = "2px";
+    return true;
+  } else {
+    errorTag.textContent = errorMsg;
     input.style.borderColor = "#FF4E60";
     input.style.borderWidth = "2px";
     errorTag.style.color = "#FF4E60";
@@ -97,35 +134,6 @@ function checkboxLocation(radio, errorId, errorMsg){
      return valid
 }
 
-let currentDate = new Date();
-
-/** Check Birthdate Entry superior @current Date
- * 
- * @param {*} input - Regex Date input to check birthday validity
- * @param {*} errorId 
- * @param {*} errorMsg 
- * @returns 
- */
-function checkBirthDateEntry(input, errorId, errorMsg) {
-  let errorTag = document.getElementById(errorId);
-  let value = input.value;  
-  if (birthRegex.test(value) && Date.parse(value) > currentDate) {
-    errorTag.textContent = errorMsg;
-    input.style.borderColor = "#FF4E60";
-    input.style.borderWidth = "2px";
-    errorTag.style.color = "#FF4E60";
-    errorTag.style.fontSize = "12px";
-    return false;
-  } else {
-    errorTag.textContent = "";
-    input.style.borderColor = "green";
-    input.style.borderWidth = "2px";
-    return true;
-  }
-
-}
-
-
 function checkboxCondition(checkbox, errorId, errorMsg){
   let errorTag = document.getElementById(errorId)
 
@@ -141,6 +149,8 @@ function checkboxCondition(checkbox, errorId, errorMsg){
   }
 }
 
+// Function to launch confirmation modal
+
 function launchConfirmationModal () {
   modalbg.style.display = "none";
   modalConfirmation.style.display = "block";
@@ -151,6 +161,7 @@ function launchConfirmationModal () {
   })
 }
 
+// Validation message after checking entries
 function validate (event){
   event.preventDefault();
   const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', 'Champ obligatoire avec un minimum de 2 caractères');
