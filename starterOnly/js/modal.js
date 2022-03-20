@@ -59,7 +59,6 @@ function closeModal(){
 }
 
 /** Check Entries
- * 
  * @param {*} input - check validity of user input
  * @param {*} errorId - id de la clef d'erreur
  * @param {*} errorMsg - message affiché à l'utilisateur
@@ -67,7 +66,10 @@ function closeModal(){
  */
 function checkEntry(input, regex, errorId, errorMsg) {
   let errorTag = document.getElementById(errorId);
-  // trim() permet d'éviter à l'utilisateur d'ajouter des espaces dans le input qui est considéré comme un charactère
+  /** trim() Méthode de nettoyage de texte qui retourne la chaîne de caractères de l'input débarrassée des blancs, 
+   * tabulations et espaces inutiles en début et fin de chaîne.
+   * N'a pas d'effet sur les caractères d'espacement à l'intérieur de la chaîne.
+  */
   let value = input.value.trim();
   if(regex.test(value)){
     errorTag.textContent = "";
@@ -163,6 +165,7 @@ function launchConfirmationModal () {
 
 // Validation message after checking entries
 function validate (event){
+  // éviter de lancer des actions non désirées (email par exemple)
   event.preventDefault();
   const isFirstNameValid = checkEntry(inputFirstName, nameRegex, 'firstName-error', 'Champ obligatoire avec un minimum de 2 caractères');
   const isLastNameValid = checkEntry(inputLastName, nameRegex, 'lastName-error', 'Champ obligatoire avec un minimum de 2 caractères');
