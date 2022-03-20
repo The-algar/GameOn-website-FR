@@ -23,7 +23,7 @@
 
       <input id="menu-toggle" type="checkbox" />
       <label class='menu-button-container' for="menu-toggle">
-      <div class='menu-button'></div>
+      <span class='menu-button'></span>
       </label>
       <ul class="menu" id="menu">
         <li class="menu__item active">Accueil</li>
@@ -33,15 +33,13 @@
         <li class="menu__item">Évènements passés</li>
       </ul>
   </div>
-
-    <main>
+  <main>
       <div class="hero-section" id="hero-section">
         <div class="hero-content">
-                  <div class="hero-img">
-          <img src="assets/img/bg_img.jpg" alt="img" />
-        </div>
-
-        <header class="header">
+            <div class="hero-img">
+            <img src="assets/img/bg_img.jpg" alt="img" />
+            </div>
+            <header class="header">
           <h1 class="hero-headline">
             Marathon national<br class="break" />
             de jeux vidéos
@@ -50,21 +48,20 @@
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert
             aux réservations... Places limitées !
           </p>
-        </header>
-        <button class="btn btn-signup modal-btn">
+            </header>
+            <button class="btn btn-signup modal-btn">
           je m'inscris
-        </button>
-        <button class="btn btn-signup2 modal-btn">
+            </button>
+            <button class="btn btn-signup2 modal-btn">
           je m'inscris
-        </button>
+            </button>
+        </div>
       </div>
-
       <div class="bkground">
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form
-              name="reserve"
+            <form name="reserve"
               action="index.html"
               method="get"
               onsubmit="validate(event);"
@@ -82,8 +79,7 @@
               <!--  3rd Issue : implement span for error reporting -->
                 <span id="firstName-error"></span>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="lastName">* Nom</label><br>
                 <input
                   class="text-control"
@@ -94,8 +90,7 @@
                 /><br>
                 <span id="lastName-error"></span>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="email">* E-mail</label><br>
                 <input
                   class="text-control"
@@ -105,8 +100,7 @@
                 /><br>
                 <span id="email-error"></span>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="birthDate">* Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -116,8 +110,7 @@
                 /><br>
                 <span id="date-error"></span>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="quantity">* À combien de tournois GameOn avez-vous déjà participé ? </label><br>
                 <input 
                 type="number" 
@@ -129,8 +122,7 @@
                 <span id="quantity-error"></span>
               </div>
               <p class="text-label">* A quel tournoi souhaitez-vous participé cette année ?</p>
-              <div
-                class="formData">
+              <div class="formData">
                 <input
                   class="checkbox-input input-location"
                   type="radio"
@@ -199,18 +191,16 @@
                 >
                 <br>
                 <span id="location-error"></span>
-              </div>
-            
-              <div
-                class="formData">
-                <!--uncheck for RGPD-->
+              </div>          
+              <div class="formData">
+                <!-- uncheck for RGPD -->
                 <input
                   class="checkbox-input input-condition"
                   type="checkbox"
                   id="checkbox1"
                   checked 
                 />
-                <label class="checkbox2-label" for="checkbox1" required="required">
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -230,7 +220,6 @@
               <input
                 class="btn-submit"
                 type="submit"
-                class="button"
                 value="C'est parti"
               />
             </form>
@@ -244,8 +233,8 @@
           <span class="close"></span>
           <div class="modal-body">
             <div class="container">
-              <p>Merci de <br class="break" /> votre inscription à</p>
-              <img class="thankU-logo" alt="logo" src="assets/img/Logo.png" /> <!-- width="auto" height="auto"--></p>
+              <h2>Merci de <br /> votre inscription à</h2>
+              <img class="thankU-logo" alt="logo" src="assets/img/Logo.png" /> <!-- width="auto" height="auto"-->
             </div>
           </div>
           <button class="btn-close close-confirmation">
@@ -253,7 +242,7 @@
           </button>
         </div>
       </div>
-    </main>
+  </main>
     <footer>
       <div class="copyright">
         Copyright 2014 - 2022, GameOn Inc.
